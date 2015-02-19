@@ -1,0 +1,14 @@
+<header class="header">
+	<nav>
+		<ul class="nav nav-pills">
+			<% if signed_in? %>
+				<li><%= link_to "My Profile", "#" %></li>
+				<li><%= link_to "Sign out", signout_path, method: :delete %>
+			<% else %>
+				<li class="active"><%= link_to "Sign up", signup_path%></li>
+				<li><%= link_to "Sign in", signin_path %></li>
+			<% end %>
+			<li><%= link_to "Home", root_path %></li>
+		<ul>
+	</nav>
+</header>
