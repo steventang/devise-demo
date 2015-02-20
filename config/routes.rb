@@ -2,13 +2,17 @@ Rails.application.routes.draw do
 
   root 'static_pages#home'
 
-  devise_for :users
+  devise_for :users, controllers: { registrations: "users/registrations", 
+                                    sessions: "users/sessions",
+                                    omniauth_callbacks: 'omniauth_callbacks' }
 
   devise_scope :user do
     get "/signin" => "devise/sessions#new"
     get "/signup" => "devise/registrations#new"
     delete "/signout" => "devise/sessions#destroy"
   end
+
+  match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
 
   get 'static_pages/home'
 
