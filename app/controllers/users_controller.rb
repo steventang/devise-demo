@@ -1,5 +1,14 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :finish_signup]
+
+  def show
+    # authorize! :read, @user
+  end
+
+  # GET /users/:id/edit
+  def edit
+    # authorize! :update, @user
+  end
 
   # PATCH/PUT /users/:id.:format
   def update
@@ -21,7 +30,7 @@ class UsersController < ApplicationController
     # authorize! :update, @user 
     if request.patch? && params[:user] #&& params[:user][:email]
       if @user.update(user_params)
-        @user.skip_reconfirmation!
+        @user.skip_reconfirmation!if user.respond_to?(:skip_confirmation)
         sign_in(@user, :bypass => true)
         redirect_to @user, notice: 'Your profile was successfully updated.'
       else
