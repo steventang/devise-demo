@@ -7,7 +7,6 @@ class UsersController < ApplicationController
 
   # GET /users/:id/edit
   def edit
-    # authorize! :update, @user
   end
 
   # PATCH/PUT /users/:id.:format
@@ -30,7 +29,8 @@ class UsersController < ApplicationController
     # authorize! :update, @user 
     if request.patch? && params[:user] #&& params[:user][:email]
       if @user.update(user_params)
-        @user.skip_reconfirmation!if user.respond_to?(:skip_confirmation)
+        debugger
+        @user.skip_reconfirmation! if user.respond_to?(:skip_confirmation)
         sign_in(@user, :bypass => true)
         redirect_to @user, notice: 'Your profile was successfully updated.'
       else
