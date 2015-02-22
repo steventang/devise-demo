@@ -1,12 +1,56 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+/* selectors */
+
+body {
+	padding-top: 70px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
 /* utilites */
+
 .col-centered{
    float: none;
    margin: 0 auto;
 }
 
+/* header */
+
 .header {
-	margin: 10px;
+	padding: 10px;
+}
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
+}
+
+footer small {
+  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 15px;
+}
+
+.debug {
+	margin-top: 50px;
 }
