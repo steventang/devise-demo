@@ -1,12 +1,6 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   before_action :set_additional_providers, only: [:edit, :update]
 
-  def create
-    super
-    flash.delete(:notice)
-    flash[:success] = "You've signed up!"
-  end
-
   private
 
     def set_additional_providers
