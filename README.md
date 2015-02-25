@@ -9,6 +9,7 @@ This is a minimal boilerplate app that can be used as a starting point to build 
 * Devise flash message styles are modified to imitate bootstrap styles
 
 ## Using this boilerplate
+* Heroku is the intended deployment method
 * Puma as the production webserver
 * Sendgrid as the production mailer
 * Omniauth provider keys must be defined in environment variables in config (ie in an app_evironment_variables.rb file)
