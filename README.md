@@ -16,6 +16,6 @@ This is a minimal boilerplate app that can be used as a starting point to build 
 * Chnage the secret token at config/initializers/secret_token.rb
 
 ## Getting started
-* Clone the git repo - `git clone https://github.com/steventang/.git`
+* Clone the git repo - `git clone https://github.com/steventang/devise-demo.git`
 * Run `bundle install`
 * Run `rake db:migrate`
