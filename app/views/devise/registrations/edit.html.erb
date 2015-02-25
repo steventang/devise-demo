@@ -29,11 +29,12 @@
           <%= f.submit "Update", class: "form-control btn btn-primary" %>
         </div>
       <% end %>
-
-      <% @additional_providers.each do |provider| %>
-        <div class="add-provider">
-          <%= link_to "Connect your #{provider} account", user_omniauth_authorize_path(provider) %>
-        </div>
+      <% if @additional_providers %>
+        <% @additional_providers.each do |provider| %>
+          <div class="add-provider">
+            <%= link_to "Connect your #{provider} account", user_omniauth_authorize_path(provider) %>
+          </div>
+        <% end %>
       <% end %>
 
       <h3>Cancel my account</h3>

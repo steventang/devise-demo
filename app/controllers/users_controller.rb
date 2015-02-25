@@ -1,14 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy, :finish_signup]
 
-  def show
-    # authorize! :read, @user
-  end
-
-  # GET /users/:id/edit
-  def edit
-  end
-
   # PATCH/PUT /users/:id.:format
   def update
     # authorize! :update, @user

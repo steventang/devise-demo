@@ -1,7 +1,22 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+/* variables */
+
+/* mixins */
+
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
 /* selectors */
+
+input, textarea, select, .uneditable-input {
+  @include box_sizing;
+}
+
 
 body {
 	padding-top: 70px;
@@ -14,6 +29,7 @@ section {
 textarea {
   resize: vertical;
 }
+
 
 /* utilites */
 
@@ -53,4 +69,13 @@ footer ul li {
 
 .debug {
 	margin-top: 50px;
+}
+
+/* forms */
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
 }
